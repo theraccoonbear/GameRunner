@@ -15,7 +15,10 @@
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/main.css">
 				<link rel="stylesheet" href="css/jQueryTab.css">
-					<link rel="stylesheet" href="css/styles.css">
+					<link rel="stylesheet" href="css/jquery-ui.css">
+				<link rel="stylesheet" href="css/jquery-ui.structure.css">
+				<link rel="stylesheet" href="css/jquery-ui.theme.css">
+				<link rel="stylesheet" href="css/styles.css">
         <script src="js/vendor/modernizr-2.6.2.min.js"></script>
     </head>
     <body>
@@ -34,8 +37,28 @@
 					</div>
 				</section>
 				<section class="tab_content" id="tabCharacters">
-				<p>Dei conversa egens spectent tum sed diremit haec. Dei cinxit zephyro media congeriem septemque rudis. Terrae nubes utramque opifex diu magni reparabat meis nam. Turba habendum. Onus animal est pondere. Foret dedit obsistitur. Tenent homo caligine humanas sanctius dicere sive addidit. Ignea sibi. Aberant mundi iners dispositam altae orbis fronde iunctarum nubibus. Ante parte. Quisquis tractu diu. Iudicis dominari frigida origo surgere fabricator. Piscibus figuras speciem evolvit ulla obstabatque cuncta. Omni grandia terrenae pugnabant pondus quisque orbis ultima.</p>
-				<p>Legebantur calidis mundum caligine coeperunt. Descenderat regat prima dissaepserat humanas tonitrua orbem bracchia. Principio galeae sole. Margine postquam evolvit eodem auroram uno omni ille secrevit regat.Coeptis undae traxit certis secrevit campoque liquidum margine gravitate. Animus convexi origine terrae cesserunt. Tumescere natus proximus lacusque. Otia faecis tonitrua erat hominum aliis radiis moles.</p>
+					<div id="character">
+						<label for="charName">Name: <input type="text" id="charName"></label>
+						<label for="charPlayer">Player: <input type="text" id="charPlayer"></label>
+						<ul class="fleft" id="scoreLabels">
+							<li data-ability="str"><span class="label">STR</span></li>
+							<li data-ability="dex"><span class="label">DEX</span></li>
+							<li data-ability="int"><span class="label">INT</span></li>
+							<li data-ability="wis"><span class="label">WIS</span></li>
+							<li data-ability="con"><span class="label">CON</span></li>
+							<li data-ability="cha"><span class="label">CHA</span></li>
+						</ul>
+						<ul class="fleft" id="abilityScores">
+							<li><span class="score" id="charStr"></span></li>
+							<li><span class="score" id="charDex"></span></li>
+							<li><span class="score" id="charInt"></span></li>
+							<li><span class="score" id="charWis"></span></li>
+							<li><span class="score" id="charCon"></span></li>
+							<li><span class="score" id="charCha"></span></li>
+						</ul>
+						<div class="clearfix"></div>
+						<input type="button" id="newChar" value="New Character">
+					</div>
 				</section>
 				<section class="tab_content" id="tabMaps">
 				<p>Astra eurus supplex undae fulgura congestaque locis. Gravitate ante nabataeaque sua naturae satus ad. Madescit pugnabant effervescere abscidit altae. Parte norant principio vultus reparabat omni rapidisque.</p>
@@ -47,7 +70,9 @@
 		
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
+				<script src="js/vendor/jquery-ui.js"></script>
 				<script src="js/vendor/jQueryTab.js"></script>
+				
 				<script src="js/vendor/class.js"></script>
 				<script src="js/vendor/mustache.js"></script>
 				<script src="http://theraccoonshare.com/sirest/sirest.js"></script>
@@ -57,6 +82,9 @@
 				<script src="js/base.js"></script>
 				<script src="js/ui.js"></script>
 				<script src="js/dice.js"></script>
+				
+				<script src="js/race.js"></script>
+				<script src="js/character.js"></script>
 				<script src="js/game-runner.js"></script>
 				
 

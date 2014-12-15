@@ -5,6 +5,9 @@ var GameRunner = BaseClass.extend({
 		ctxt.dice = new Dice();
 		
 		console.log(ctxt.dice.roll('3d6'));
+		
+		var race = new Dwarf();
+		
 	},
 });
 

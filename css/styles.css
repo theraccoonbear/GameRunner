@@ -1,3 +1,16 @@
+.fleft {
+	float: left;
+}
+
+.clearfix:after {
+   content: " "; /* Older browser do not support empty content */
+   visibility: hidden;
+   display: block;
+   height: 0;
+   clear: both;
+}
+
+
 input, select, textarea {
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
@@ -22,4 +35,11 @@ input.output {
 	border: 2px solid #888;
 	margin: 2px;
 	width: auto;
+}
+
+span.label {
+	display: inline-block;
+	width: 60px;
+	font-weight: bold;
+	text-align: right;
 }

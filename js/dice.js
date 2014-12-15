@@ -54,5 +54,25 @@ var Dice = BaseClass.extend({
 		return ctxt._roll(a, b);
 	},
 	
+	rollAbility: function() {
+		var ctxt = this;
+		var rolls =[];
+		for (var i = 0; i < 4; i++) {
+			rolls.push(ctxt.roll('1d6'));
+		}
+		
+		var min_idx = false;
+		for (var i = 0; i < rolls.length; i++) {
+			min_idx = min_idx === false ? (i) : (rolls[min_idx] < rolls[i] ? min_idx : i);
+		}
+		
+		var dropped = rolls.splice(min_idx, 1);
+		console.log(dropped, rolls);
+		
+		return rolls.reduce(function(p, c) { return p + c; });
+	},
+	
 	_xyz: null
 });
+
+dice = new Dice();

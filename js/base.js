@@ -1,3 +1,4 @@
+
 var BaseClass = Class.extend({
 	toHook: [],
 	
@@ -10,6 +11,9 @@ var BaseClass = Class.extend({
 		BaseClass.super.constructor.call(this, options);
 		
 		this.hooks();
+		if (typeof this.regActions === 'function') {
+			this.regActions();
+		}
 	},
 	
 	hooks: function() {
@@ -55,5 +59,43 @@ var BaseClass = Class.extend({
 		}
 	},
 
+	drill: function drill(o, s) {
+    s = s.replace(/\[(\w+)\]/g, '.$1'); // convert indexes to properties
+    s = s.replace(/^\./, '');           // strip a leading dot
+    var a = s.split('.');
+    while (a.length) {
+        var n = a.shift();
+        if (n in o) {
+            o = o[n];
+        } else {
+            return false;
+        }
+    }
+    return o;
+	},
+
+	
+	//drill: function(o, b, d) {
+	//	b = b instanceof String ? b.split('.') : b;
+	//	d = typeof d === 'undefined' ? false : d;
+	//	var ret_val = d;
+	//	
+	//	if (typeof o === 'undefined') {
+	//		return ret_val;
+	//	}
+	//	
+	//	ret_val = o;
+	//	for (var i = 0; i < b.length; i++) {
+	//		if (typeof ret_val[b[i]] === 'undefined') {
+	//			ret_val = d;
+	//			break;
+	//		} else {
+	//			ret_val = ret_val[b[i]];
+	//		}
+	//	}
+	//	
+	//	return ret_val;
+	//},
+	
 	_xyz: null
 });
